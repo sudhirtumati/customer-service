@@ -1,0 +1,1 @@
+INSERT INTO CUSTOMER(ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH, ACTIVE) VALUES ('valid_id', 'First Name', 'Last Name', PARSEDATETIME('12/12/1997', 'dd/MM/yyyy'), true);

@@ -1,0 +1,24 @@
+description: |
+  Customer retrieved successfully
+  ```
+  given:
+    customer exists with a specific id
+  when:
+    retrieving customer with that id
+  then:
+    customer information must be returned successfully
+  ```
+request:
+  method: GET
+  url: /customers/v1/valid_id
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  headers:
+    Content-Type: application/json
+  body:
+    firstName: "First Name"
+    lastName: "Last Name"
+    dateOfBirth: "1997-12-12"
+    active: true

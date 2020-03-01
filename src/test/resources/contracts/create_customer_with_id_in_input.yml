@@ -1,0 +1,23 @@
+description: |
+  Create customer with invalid data (provide 'id' as part of request body)
+  ```
+  given:
+    request data is invalid
+  when:
+    a request is made to create customer
+  then:
+    400 response should be returned
+  ```
+request:
+  method: POST
+  url: /customers/v1
+  body:
+    id: some_id
+    firstName: First Name
+    lastName: Last Name
+    dateOfBirth: "1990-12-12"
+    active: false
+  headers:
+    Content-Type: application/json
+response:
+  status: 400
