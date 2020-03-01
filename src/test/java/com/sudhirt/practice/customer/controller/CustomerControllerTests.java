@@ -18,8 +18,7 @@ import java.time.LocalDate;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -104,7 +103,7 @@ public class CustomerControllerTests {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(payload))
                 .andExpect(status().isCreated())
-                .andExpect(content().string("customer_id"));
+                .andExpect(header().string("location", "http://localhost/customers/v1/customer_id"));
     }
 
     private Customer createCustomer(String s) {
