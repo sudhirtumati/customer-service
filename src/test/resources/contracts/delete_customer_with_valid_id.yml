@@ -1,0 +1,17 @@
+description: |
+  Customer deleted successfully
+  ```
+  given:
+    customer exists with a specific id
+  when:
+    deleting customer with that id
+  then:
+    customer information must be returned successfully
+  ```
+request:
+  method: DELETE
+  url: /customers/v1/valid_id_1
+  headers:
+    Content-Type: application/json
+response:
+  status: 200

@@ -1,0 +1,17 @@
+description: |
+  404 error while deleting customer
+  ```
+  given:
+    customer doesn't exist with a specific id
+  when:
+    deleting customer with that id
+  then:
+    a 404 error must be returned
+  ```
+request:
+  method: DELETE
+  url: /customers/v1/invalid_id
+  headers:
+    Content-Type: application/json
+response:
+  status: 404
