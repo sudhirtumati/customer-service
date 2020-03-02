@@ -1,0 +1,22 @@
+description: |
+  404 error while updating customer
+  ```
+  given:
+    customer doesn't exist with a specific id
+  when:
+    deleting customer with that id
+  then:
+    a 404 error must be returned
+  ```
+request:
+  method: PUT
+  url: /customers/v1/valid_id
+  body:
+    firstName: First Name updated
+    lastName: Last Name updated
+    dateOfBirth: "1999-01-01"
+    active: false
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
