@@ -20,7 +20,9 @@ request:
     Content-Type: application/json
 response:
   status: 201
+  headers:
+      Location: "http://localhost/customers/v1/"
   matchers:
     headers:
       - key: Location
-        predefined: url
+        regex: "http://localhost/customers/v1/.*"
